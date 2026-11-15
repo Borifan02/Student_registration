@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const { validationResult } = require('express-validator');
 const Registration = require('../models/Registration');
 const User = require('../models/User');
@@ -104,7 +105,11 @@ const getMyRegistrations = async (req, res) => {
 // @access  Private (Student or Admin)
 const getRegistrationById = async (req, res) => {
   try {
-    const registration = await Registration.findById(req.params.id)
+    const query = mongoose.isValidObjectId(req.params.id)
+      ? { _id: req.params.id }
+      : { studentId: req.params.id.trim().toUpperCase() };
+
+    const registration = await Registration.findOne(query)
       .populate('userId', 'firstName middleName lastName email phone studentId department program yearOfStudy')
       .populate('reviewedBy', 'firstName lastName email');
 

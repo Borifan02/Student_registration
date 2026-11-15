@@ -7,7 +7,7 @@ const options = {
       title: 'Student Registration Management System API',
       version: '1.0.0',
       description:
-        'RESTful API documentation for university Student Registration Management System, built with Express, Mongoose, and JWT authentication.',
+        'RESTful API documentation for university Student Registration Management System, built with Express, Mongoose, and JWT authentication.\n\n### 🔐 How to Authorize in Swagger UI:\n1. **Get Token**: Open **Authentication** ➔ **POST /api/auth/login**, click *Try it out*, and log in with:\n   - **Admin**: `admin@university.edu` / `AdminPassword123!`\n   - **Student**: `alex.johnson@university.edu` / `StudentPassword123!`\n2. **Copy the `token` string** from the response body.\n3. **Authorize**: Click the green **Authorize** 🔓 button at the top right of this page.\n4. **Paste your token** and click **Authorize**.\n5. Now all protected endpoints (`/api/student/*`, `/api/admin/*`, `/api/registrations/*`) will execute with 200 OK!',
       contact: {
         name: 'HCI Course Development Team',
       },
@@ -24,7 +24,7 @@ const options = {
           type: 'http',
           scheme: 'bearer',
           bearerFormat: 'JWT',
-          description: 'Enter your JWT token obtained from login in the format: Bearer <token>',
+          description: 'Enter your JWT token obtained from POST /api/auth/login',
         },
       },
       schemas: {

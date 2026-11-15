@@ -134,6 +134,9 @@ router.get('/registrations', getAllRegistrations);
  *             type: object
  *             required:
  *               - status
+ *             example:
+ *               status: "Approved"
+ *               note: "Academic criteria verified and approved."
  *             properties:
  *               status:
  *                 type: string

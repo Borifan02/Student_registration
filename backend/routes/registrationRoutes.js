@@ -29,6 +29,12 @@ router.use(protect);
  *             required:
  *               - academicYear
  *               - semester
+ *             example:
+ *               academicYear: "2026-2027"
+ *               semester: "Semester 1"
+ *               department: "Computer Science"
+ *               program: "Software Engineering"
+ *               notes: "Course registration application."
  *             properties:
  *               academicYear:
  *                 type: string

@@ -50,6 +50,17 @@ router.get('/profile', getStudentProfile);
  *     tags: [Student Portal]
  *     security:
  *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             example:
+ *               phone: "+1 555-0199"
+ *               department: "Computer Science"
+ *               program: "Software Engineering"
+ *               yearOfStudy: 2
  *     responses:
  *       200:
  *         description: Updated profile data

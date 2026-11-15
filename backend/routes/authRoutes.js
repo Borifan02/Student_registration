@@ -27,6 +27,20 @@ const router = express.Router();
  *               - program
  *               - password
  *               - confirmPassword
+ *             example:
+ *               firstName: "John"
+ *               middleName: "Doe"
+ *               lastName: "Smith"
+ *               gender: "Male"
+ *               dateOfBirth: "2003-04-12"
+ *               email: "john.smith@university.edu"
+ *               phone: "+1 555-0199"
+ *               studentId: "STU2026-999"
+ *               department: "Computer Science"
+ *               program: "Software Engineering"
+ *               yearOfStudy: 1
+ *               password: "Password123!"
+ *               confirmPassword: "Password123!"
  *             properties:
  *               firstName:
  *                 type: string
@@ -116,6 +130,9 @@ router.post(
  *             required:
  *               - email
  *               - password
+ *             example:
+ *               email: "admin@university.edu"
+ *               password: "AdminPassword123!"
  *             properties:
  *               email:
  *                 type: string

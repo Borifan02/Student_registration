@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const User = require('../models/User');
 const Registration = require('../models/Registration');
 
@@ -167,7 +168,11 @@ const getAllStudents = async (req, res) => {
 // @access  Private (Admin)
 const getStudentById = async (req, res) => {
   try {
-    const student = await User.findById(req.params.id).select('-password');
+    const query = mongoose.isValidObjectId(req.params.id)
+      ? { _id: req.params.id }
+      : { studentId: req.params.id.trim().toUpperCase() };
+
+    const student = await User.findOne(query).select('-password');
     if (!student) {
       return res.status(404).json({
         success: false,
@@ -286,7 +291,11 @@ const updateRegistrationStatus = async (req, res) => {
   }
 
   try {
-    const registration = await Registration.findById(req.params.id);
+    const regQuery = mongoose.isValidObjectId(req.params.id)
+      ? { _id: req.params.id }
+      : { studentId: req.params.id.trim().toUpperCase() };
+
+    const registration = await Registration.findOne(regQuery);
     if (!registration) {
       return res.status(404).json({
         success: false,
@@ -339,7 +348,11 @@ const updateRegistrationStatus = async (req, res) => {
 // @access  Private (Admin)
 const deleteStudentRecord = async (req, res) => {
   try {
-    const student = await User.findById(req.params.id);
+    const query = mongoose.isValidObjectId(req.params.id)
+      ? { _id: req.params.id }
+      : { studentId: req.params.id.trim().toUpperCase() };
+
+    const student = await User.findOne(query);
     if (!student) {
       return res.status(404).json({
         success: false,
