@@ -225,3 +225,4 @@ export const RegistrationHistory = () => {
 };
 
 export default RegistrationHistory;
+

@@ -103,3 +103,4 @@ router.get('/my', authorize('student'), getMyRegistrations);
 router.get('/:id', getRegistrationById);
 
 module.exports = router;
+

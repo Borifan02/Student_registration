@@ -277,3 +277,4 @@ Registration_system/
 ## 9. License
 
 Developed for academic coursework in Human-Computer Interaction (HCI) and Advanced Web Engineering.
+

@@ -142,10 +142,10 @@ export const StudentDashboard = () => {
             latestReg?.status === 'Approved'
               ? 'emerald'
               : latestReg?.status === 'Rejected'
-              ? 'rose'
-              : latestReg?.status === 'Under Review'
-              ? 'blue'
-              : 'amber'
+                ? 'rose'
+                : latestReg?.status === 'Under Review'
+                  ? 'blue'
+                  : 'amber'
           }
         />
 
@@ -327,3 +327,4 @@ export const StudentDashboard = () => {
 };
 
 export default StudentDashboard;
+

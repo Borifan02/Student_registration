@@ -98,3 +98,4 @@ registrationSchema.index({ userId: 1, academicYear: 1, semester: 1 });
 registrationSchema.index({ status: 1, submittedAt: -1 });
 
 module.exports = mongoose.model('Registration', registrationSchema);
+

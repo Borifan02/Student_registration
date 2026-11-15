@@ -92,3 +92,4 @@ export const Timeline = ({ registration }) => {
 };
 
 export default Timeline;
+
