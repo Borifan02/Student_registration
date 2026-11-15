@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
 import FormInput from '../components/FormInput';
-import { GraduationCap, LogIn, Shield, User, ArrowRight } from 'lucide-react';
+import { GraduationCap, LogIn, ArrowRight } from 'lucide-react';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -65,18 +65,6 @@ export const Login = () => {
     }
   };
 
-  const handleDemoFill = (role) => {
-    if (role === 'admin') {
-      setEmail('admin@university.edu');
-      setPassword('AdminPassword123!');
-      setErrors({});
-    } else {
-      setEmail('alex.johnson@university.edu');
-      setPassword('StudentPassword123!');
-      setErrors({});
-    }
-  };
-
   return (
     <div className="max-w-md mx-auto py-8">
       <div className="rounded-3xl bg-white border border-slate-200 shadow-xl overflow-hidden">
@@ -93,31 +81,6 @@ export const Login = () => {
 
         {/* Form Body */}
         <div className="p-8 space-y-6">
-          {/* Quick Demo Fill Buttons (HCI Convenience) */}
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider text-center">
-              Quick Demo Fill
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => handleDemoFill('student')}
-                className="flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-lg text-xs font-medium bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-600 text-slate-700 transition-colors shadow-xs"
-              >
-                <User size={13} />
-                <span>Alex (Student)</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleDemoFill('admin')}
-                className="flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-lg text-xs font-medium bg-white border border-slate-200 hover:border-blue-500 hover:text-blue-600 text-slate-700 transition-colors shadow-xs"
-              >
-                <Shield size={13} />
-                <span>Registry Admin</span>
-              </button>
-            </div>
-          </div>
-
           {errors.general && (
             <div
               className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium"

@@ -95,12 +95,10 @@ app.get('/', (req, res) => {
           
           <div class="btn-group">
             <a href="${clientUrl}" class="btn btn-primary" target="_blank">Open Frontend UI (${clientUrl}) ↗</a>
-            <a href="/api-docs" class="btn btn-secondary">Interactive Swagger Docs ↗</a>
           </div>
 
           <div class="endpoints">
             <div class="endpoints-title">Available Server Endpoints:</div>
-            <div class="ep-item"><span>API Documentation</span><a href="/api-docs">/api-docs</a></div>
             <div class="ep-item"><span>Health Diagnostic</span><a href="/api/health">/api/health</a></div>
             <div class="ep-item"><span>Authentication</span><span>/api/auth</span></div>
             <div class="ep-item"><span>Student Portal</span><span>/api/student</span></div>

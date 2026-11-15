@@ -52,11 +52,6 @@ export const Footer = () => {
                   Registry Officer Login
                 </a>
               </li>
-              <li>
-                <a href="/api-docs" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-                  Swagger API Specs ↗
-                </a>
-              </li>
               <li className="flex items-center gap-1.5 text-xs text-emerald-400 pt-1">
                 <ShieldCheck size={14} />
                 <span>RBAC Protected</span>
@@ -68,7 +63,7 @@ export const Footer = () => {
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} University Registry & Academic Affairs. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Built for Human-Computer Interaction (HCI) Demonstration.
+            Built for Academic Registry & Student Information Management.
           </p>
         </div>
       </div>

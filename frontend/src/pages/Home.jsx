@@ -63,16 +63,6 @@ export const Home = () => {
                 </Link>
               </>
             )}
-
-            <a
-              href="/api-docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-sm font-medium text-blue-300 hover:text-white hover:bg-white/5 transition-colors"
-            >
-              <FileText size={16} />
-              <span>Swagger API Docs ↗</span>
-            </a>
           </div>
         </div>
 
@@ -80,33 +70,6 @@ export const Home = () => {
         <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
         <div className="absolute right-10 top-10 opacity-10 hidden lg:block pointer-events-none">
           <GraduationCap size={280} />
-        </div>
-      </section>
-
-      {/* Quick Credentials / Evaluator Banner */}
-      <section className="rounded-2xl border border-blue-200 bg-blue-50/60 p-6 shadow-sm">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2 text-blue-900 font-bold text-base">
-              <ShieldCheck size={20} className="text-blue-600" />
-              <span>Demonstration & Evaluation Access</span>
-            </div>
-            <p className="mt-1 text-xs text-blue-800 leading-relaxed">
-              Default pre-seeded university accounts are available for instant testing.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <div className="px-3.5 py-2 rounded-xl bg-white border border-blue-200 text-xs shadow-xs">
-              <span className="font-semibold text-slate-800 block">Administrator:</span>
-              <span className="text-slate-600">admin@university.edu</span> / <span className="font-mono text-slate-700">AdminPassword123!</span>
-            </div>
-
-            <div className="px-3.5 py-2 rounded-xl bg-white border border-blue-200 text-xs shadow-xs">
-              <span className="font-semibold text-slate-800 block">Sample Student:</span>
-              <span className="text-slate-600">alex.johnson@university.edu</span> / <span className="font-mono text-slate-700">StudentPassword123!</span>
-            </div>
-          </div>
         </div>
       </section>
 
