@@ -53,11 +53,12 @@ export const Login = () => {
           navigate('/student/dashboard', { replace: true });
         }
       } else {
-        setErrors({ general: res.message || 'Invalid credentials' });
-        showToast(res.message || 'Login failed. Please check your credentials.', 'error');
+        const errorMsg = res.message || 'Invalid email or password';
+        setErrors({ general: errorMsg });
+        showToast(errorMsg, 'error');
       }
     } catch (err) {
-      const msg = err.response?.data?.message || 'Unable to log in. Please check your connection.';
+      const msg = err.response?.data?.message || 'Invalid email or password';
       setErrors({ general: msg });
       showToast(msg, 'error');
     } finally {

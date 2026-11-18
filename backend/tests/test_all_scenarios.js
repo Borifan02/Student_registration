@@ -137,18 +137,31 @@ async function runTests() {
     recordTest(4, 'Login with valid credentials', false, err.message);
   }
 
-  // Scenario 5: Login with incorrect credentials
+  // Scenario 5: Login with incorrect credentials (both wrong password & wrong email return generic message)
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {
+    const wrongPwdRes = await fetch(`${API_BASE}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: testEmail, password: 'WrongPassword999!' }),
     });
-    const data = await res.json();
-    if (res.status === 401 && !data.success) {
-      recordTest(5, 'Login with incorrect credentials', true, 'Properly rejected 401 Unauthorized');
+    const wrongPwdData = await wrongPwdRes.json();
+
+    const wrongEmailRes = await fetch(`${API_BASE}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'nonexistent.user.999@university.edu', password: 'SomePassword123!' }),
+    });
+    const wrongEmailData = await wrongEmailRes.json();
+
+    if (
+      wrongPwdRes.status === 401 &&
+      wrongPwdData.message === 'Invalid email or password' &&
+      wrongEmailRes.status === 401 &&
+      wrongEmailData.message === 'Invalid email or password'
+    ) {
+      recordTest(5, 'Login with incorrect credentials', true, 'Both wrong email and wrong password return "Invalid email or password"');
     } else {
-      recordTest(5, 'Login with incorrect credentials', false, `Expected 401, got ${res.status}`);
+      recordTest(5, 'Login with incorrect credentials', false, `Expected "Invalid email or password", got: ${wrongPwdData.message} / ${wrongEmailData.message}`);
     }
   } catch (err) {
     recordTest(5, 'Login with incorrect credentials', false, err.message);
